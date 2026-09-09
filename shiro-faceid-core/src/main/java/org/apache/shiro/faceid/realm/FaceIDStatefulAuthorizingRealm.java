@@ -1,5 +1,6 @@
 package org.apache.shiro.faceid.realm;
 
+import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.biz.realm.AbstractAuthorizingRealm;
 import org.apache.shiro.faceid.token.FaceIDLoginToken;
 
@@ -16,7 +17,7 @@ public class FaceIDStatefulAuthorizingRealm extends AbstractAuthorizingRealm {
 	 * @return the authentication token class
 	 */
 	@Override
-	public Class<?> getAuthenticationTokenClass() {
+	public Class<? extends AuthenticationToken> getAuthenticationTokenClass() {
 		return FaceIDLoginToken.class;// 此Realm只支持KissoLoginToken
 	}
 
